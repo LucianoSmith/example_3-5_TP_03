@@ -2,6 +2,8 @@
 
 #include "mbed.h"
 #include "arm_book_lib.h"
+#include <cstring> 
+using namespace std;
 
 //=====[Defines]===============================================================
 
@@ -309,7 +311,7 @@ void uartTask()
         case 'c':
         case 'C':
             sprintf ( str, "Temperature: %.2f \xB0 C\r\n", lm35TempC );
-            stringLength = strlen(str);
+            stringLength = std::strlen(str);
             uartUsb.write( str, stringLength );
             break;
 
